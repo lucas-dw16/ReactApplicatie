@@ -4,20 +4,26 @@ const MoviesContext = createContext();
 
 export function MoviesProvider({ children }) {
   const [movies, setMovies] = useState([]);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    const apiKey = import.meta.env.VITE_TMDB_API_KEY;
+    const fetchMovies = async () => {
+      const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
-    fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
-    )
-      .then((response) => response.json())
-      .then((data) => setMovies(data.results))
-      .catch((error) => console.error(error));
-  }, []);
+      const res = await fetch(
+        `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${page}`
+      );
+
+      const data = await res.json();
+
+      setMovies(data.results); // ✅ geen duplicates meer
+    };
+
+    fetchMovies();
+  }, [page]);
 
   return (
-    <MoviesContext.Provider value={{ movies }}>
+    <MoviesContext.Provider value={{ movies, page, setPage }}>
       {children}
     </MoviesContext.Provider>
   );
