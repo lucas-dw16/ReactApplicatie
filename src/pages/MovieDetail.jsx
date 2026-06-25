@@ -1,3 +1,4 @@
+import "./MovieDetail.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -18,8 +19,8 @@ function MovieDetail() {
 
   if (!movie) return <p>Laden...</p>;
 
-  return (
-    <div>
+ return (
+  <div className="movie-detail">
       <h1>{movie.title}</h1>
       <br />
       <img

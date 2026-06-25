@@ -1,0 +1,29 @@
+.movie-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  text-align: center;
+
+  max-width: 700px;
+  margin: 20px auto;
+
+  padding: 10px;
+}
+
+.movie-detail img {
+  width: 250px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.movie-detail h1 {
+  margin-bottom: 10px;
+}
+
+.movie-detail p {
+  margin: 5px 0;
+  max-width: 600px;
+  line-height: 1.4;
+}
