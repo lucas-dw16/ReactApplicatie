@@ -2,6 +2,7 @@ import MovieCard from "../components/MovieCard";
 import { useMovies } from "../context/MoviesContext";
 import "./Home.css";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
   const { movies, page, setPage } = useMovies();
@@ -41,7 +42,12 @@ function Home() {
   });
 
   return (
-    <div className="home">
+    <div className="home"> 
+
+    <Link to="/" className="back-button">
+  ⬅ 
+</Link>
+
       <h1>Films</h1>
 
       {/* SEARCH */}

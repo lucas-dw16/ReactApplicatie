@@ -1,12 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 :root {
   --bg: #0f0f0f;
   --text: #ffffff;
   --card-bg: #1c1c1c;
   --accent: #e50914;
+
+  font-family: Arial, sans-serif;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
   background-color: var(--bg);
   color: var(--text);

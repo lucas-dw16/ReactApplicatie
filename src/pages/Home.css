@@ -1,5 +1,18 @@
+
+
 .home {
-  padding: 20px;
+  min-height: 100vh;
+  padding: 60px 20px;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)),
+    url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=80");
+
+  background-size: cover;
+  background-position: center;
+
+  text-align: center;
+  color: white;
 }
 
 /* TITEL */
@@ -131,4 +144,28 @@
 .pagination button:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+.home {
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  padding: 10px 18px;
+
+  background: #6b21ff;
+  color: white;
+
+  text-decoration: none;
+  border-radius: 8px;
+
+  transition: 0.2s;
+}
+
+.back-button:hover {
+  background: #8743ff;
 }
